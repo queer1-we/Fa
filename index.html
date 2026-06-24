@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Me</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    nav {
+      background-color: #2c3e50;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 16px;
+    }
+    nav a:hover {
+      color: #d35400;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    h2 {
+      color: #d35400;
+    }
+    img {
+      display: block;
+      margin: 15px 0;
+      border: 5px solid #d35400;
+      border-radius: 20px;
+    }
+    .about-box {
+      background-color: #ffe8d6;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .learning-box {
+      background-color: #d5e8d4;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .todo-box {
+      background-color: #ffffff;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border: 2px solid #d35400;
+    }
+    .timer-box {
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .timer-box p {
+      font-size: 60px;
+      font-weight: bold;
+      color: #d35400;
+      margin: 10px 0;
+    }
+    button {
+      background-color: #d35400;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px 5px;
+    }
+    input {
+      padding: 8px;
+      font-size: 16px;
+      border: 2px solid #d35400;
+      border-radius: 8px;
+      margin: 10px 5px;
+      width: 200px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+    li {
+      background: #f5f5f5;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    li button {
+      background: #2c3e50;
+      padding: 5px 10px;
+      font-size: 14px;
+      margin: 0;
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="page2.html">Hobbies</a>
+    <a href="#about">About</a>
+    <a href="#learning">Learning</a>
+  </nav>
+
+  <a href="index.html">Home</a>
+  <a href="page2.html">Hobbies</a>
+  <a href="page3.html">Contact</a>
+  <a href="#about">About</a>
+  <a href="#learning">Learning</a>
+</nav>
+  <h1 id="home">Hi, I'm Favour!</h1>
+  <button onclick="sayHello()">Say Hello</button>
+  <button onclick="changeText()">Change My Name</button>
+  <button onclick="showSecret()">Show Secret</button>
+  <p id="myname">Hi, I'm Favour!</p>
+  <p id="secret" style="display:none; color:#d35400; font-weight:bold;">
+    My secret is that I am becoming a web developer! 🎉
+  </p>
+
+  <p><strong>Quiz:</strong> What country is jollof rice most popular in?</p>
+  <input type="text" id="answer" placeholder="Type your answer here">
+  <button onclick="checkAnswer()">Check Answer</button>
+
+  <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400" alt="A photo of me" style="width: 200px; border-radius: 10px;">
+  <p>Welcome to my page. I'm just starting out and learning to build websites with HTML and CSS.</p>
+
+  <div class="about-box" id="about">
+    <h2>A Little About Me</h2>
+    <p>I enjoy spending time with friends and family, and I'm always curious to learn new things.</p>
+    <p>My favorite food is <strong>jollof rice</strong>, and on weekends I like to relax and watch movies.</p>
+  </div>
+
+  <div class="learning-box" id="learning">
+    <h2>What I'm Learning</h2>
+    <p>Right now, I'm practicing HTML — things like headings, paragraphs, and bold text. Next, I'll start learning CSS to make my pages look nicer with colors and layouts.</p>
+  </div>
+
+  <div class="timer-box">
+    <h2 style="color:white;">Countdown Timer</h2>
+    <p id="timer">10</p>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="resetTimer()">Reset</button>
+  </div>
+
+  <div class="todo-box">
+    <h2>My To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+    <ul id="taskList"></ul>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Favour. All rights reserved.</p>
+    <p>Contact me: favour@email.com</p>
+  </footer>
+
+  <script>
+    function sayHello() {
+      alert("Hello! Welcome to Favour's website!");
+    }
+
+    function changeText() {
+      document.getElementById("myname").innerHTML = "I am a Web Developer!";
+    }
+
+    function showSecret() {
+      var secret = document.getElementById("secret");
+      if (secret.style.display === "none") {
+        secret.style.display = "block";
+      } else {
+        secret.style.display = "none";
+      }
+    }
+
+    function checkAnswer() {
+      var answer = document.getElementById("answer").value.toLowerCase();
+      if (answer === "nigeria") {
+        alert("Correct! Well done!");
+      } else {
+        alert("Wrong! Try again!");
+      }
+    }
+
+    var count = 10;
+    var interval;
+
+    function startTimer() {
+      clearInterval(interval);
+      interval = setInterval(function() {
+        count--;
+        document.getElementById("timer").innerHTML = count;
+        if (count === 0) {
+          clearInterval(interval);
+          document.getElementById("timer").innerHTML = "Time's Up!";
+        }
+      }, 1000);
+    }
+
+    function resetTimer() {
+      clearInterval(interval);
+      count = 10;
+      document.getElementById("timer").innerHTML = "10";
+    }
+
+    function addTask() {
+      var input = document.getElementById("taskInput");
+      var taskText = input.value.trim();
+
+      if (taskText === "") {
+        alert("Please type a task!");
+        return;
+      }
+
+      var li = document.createElement("li");
+      li.textContent = taskText;
+
+      var deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+      deleteBtn.onclick = function() {
+        li.remove();
+      };
+
+      li.appendChild(deleteBtn);
+      document.getElementById("taskList").appendChild(li);
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>
