@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Favour</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    nav {
+      background-color: #2c3e50;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 16px;
+    }
+    nav a:hover {
+      color: #d35400;
+    }
+    h1 { color: #2c3e50; }
+    h2 { color: #d35400; }
+    .contact-box {
+      background-color: #ffe8d6;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .form-box {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border: 2px solid #d35400;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #d35400;
+      border-radius: 8px;
+      margin: 8px 0;
+      box-sizing: border-box;
+    }
+    textarea {
+      height: 100px;
+    }
+    button {
+      background-color: #d35400;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .social-links a {
+      display: inline-block;
+      background-color: #2c3e50;
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin: 5px;
+      font-size: 14px;
+    }
+    .social-links a:hover {
+      background-color: #d35400;
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="page2.html">Hobbies</a>
+    <a href="page3.html">Contact</a>
+  </nav>
+
+  <h1>Contact Me</h1>
+  <p>Feel free to reach out — I'd love to hear from you!</p>
+
+  <div class="contact-box">
+    <h2>My Details</h2>
+    <p>Name: Favour</p>
+    <p>Email: favour@email.com</p>
+    <p>Location: Nigeria</p>
+  </div>
+
+  <div class="social-links">
+    <h2>Find Me Online</h2>
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">Twitter</a>
+    <a href="#">WhatsApp</a>
+  </div>
+
+  <div class="form-box">
+    <h2>Send Me a Message</h2>
+    <input type="text" id="senderName" placeholder="Your Name">
+    <input type="text" id="senderEmail" placeholder="Your Email">
+    <textarea id="message" placeholder="Type your message here..."></textarea>
+    <button onclick="sendMessage()">Send Message</button>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Favour. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function sendMessage() {
+      var name = document.getElementById("senderName").value.trim();
+      var email = document.getElementById("senderEmail").value.trim();
+      var message = document.getElementById("message").value.trim();
+
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill in all fields!");
+        return;
+      }
+
+      alert("Thank you " + name + "! Your message has been sent. I will reply to " + email + " soon!");
+
+      document.getElementById("senderName").value = "";
+      document.getElementById("senderEmail").value = "";
+      document.getElementById("message").value = "";
+    }
+  </script>
+
+</body>
+</html>
