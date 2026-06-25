@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ronaldo Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+    nav {
+      background-color: #2c3e50;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 20px;
+      font-size: 16px;
+    }
+    nav a:hover {
+      color: #d35400;
+    }
+    nav button {
+      background-color: #d35400;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    h1 {
+      color: #2c3e50;
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      color: #d35400;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: border 0.2s ease;
+    }
+    .gallery img:hover {
+      border: 3px solid #d35400;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      border: 3px solid #d35400;
+    }
+    .modal p {
+      color: white;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #d35400;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .dark {
+      background-color: #1a1a1a;
+      color: white;
+    }
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="page2.html">Hobbies</a>
+    <a href="page3.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+    <button onclick="toggleDarkMode()">Dark Mode</button>
+  </nav>
+
+  <h1>Ronaldo Gallery ⚽</h1>
+  <p>Tap any photo to view it full size</p>
+
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400" onclick="openImage(this.src, 'Football Player 1')">
+    <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?w=400" onclick="openImage(this.src, 'Football Player')">
+    <img src="https://images.unsplash.com/photo-1606925797300-0b35e9d1794e?w=400" onclick="openImage(this.src, 'Football Action')">
+    <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=400" onclick="openImage(this.src, 'Football Stadium')">
+    <img src="https://images.unsplash.com/photo-1551280857-2b9bbe52acf4?w=400" onclick="openImage(this.src, 'Football Skills')">
+    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=400" onclick="openImage(this.src, 'Football Goal')">
+  </div>
+
+  <!-- Modal popup -->
+  <div class="modal" id="modal" onclick="closeImage()">
+    <button class="close-btn" onclick="closeImage()">✕ Close</button>
+    <div>
+      <img id="modalImg" src="" alt="Full size image">
+      <p id="modalCaption"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Favour. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function openImage(src, caption) {
+      document.getElementById("modalImg").src = src;
+      document.getElementById("modalCaption").textContent = caption;
+      document.getElementById("modal").style.display = "flex";
+    }
+
+    function closeImage() {
+      document.getElementById("modal").style.display = "none";
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html>
